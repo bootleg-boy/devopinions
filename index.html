@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    HI shaun !
-</body>
+	<head>
+		<meta charset="utf-8">
+		<title>BBG Emulator</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="http://d3js.org/d3.v3.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+		<script>src="maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"</script>
+
+		<!-- Highcharts.js -->
+		<script src="http://code.highcharts.com/stock/highstock.js"></script>
+		<script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+	</head>
+
+	<body>
+		<div class="header">
+			<h1>Bloomberg Terminal Emulator</h1>
+	    <div class="input-group">
+	      <input type="text" class="form-control" id="ticker_search" size="35" placeholder="Tickers">
+	      <input type="text" class="form-control" id="start_date" placeholder="Start Date">
+	      <input type="text" class="form-control" id="other1" placeholder="Placeholder">
+	      <input type="text" class="form-control" id="other2" placeholder="Placeholder">
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="button" id="search_btn">Go!</button>
+	      </span>
+	    </div><!-- /input-group -->
+		</div>
+		<div id="chart1"></div>
+
+
+
+		<script src="chart1.js"></script>
+		<script type="text/javascript">
+			update(['MSFT', 'AAPL', 'GOOG']);
+			//update the chart when this button is pressed
+			$("#search_btn").on("click", function(){
+		    console.log('clicked');
+
+		    //below is the output of the textbox
+		    //What is the best way to parse the requests?
+		    var ticker = $("#ticker_search").val().split(' ');
+		    console.log(ticker);
+		    console.log($("#start_date").val());
+		    console.log($("#other1").val());
+		    console.log($("#other2").val());
+
+
+		    update(ticker);
+			})
+
+		</script>
+
+		<!-- note load all dependent JS at bottom -->
+  </body>
+
 </html>
