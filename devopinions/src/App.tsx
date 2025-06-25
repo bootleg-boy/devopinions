@@ -1,6 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.scss';
+import { useState } from 'react';
+import WebDevelopment from './WebDevelopment';
+import UiUxDesign from './UiUxDesign';
+import SeoOptimization from './SeoOptimization';
+import EcommerceSolutions from './EcommerceSolutions';
+import Maintenance from './Maintenance';
+import CloudIntegrations from './CloudIntegrations';
+import ServicesOverview from './ServicesOverview';
+<>
+// Inside Home component:
+<ServicesOverview />
+
+
+// ...import other service pages...
+
+<Routes>
+  <Route path="/services/web-development" element={<WebDevelopment />} />
+  <Route path="/services/ui-ux" element={<UiUxDesign />} />
+  {/* Add other service routes similarly */}
+</Routes>
+</>
 
 const Header = () => (
   <header className="main-header">
@@ -10,8 +31,8 @@ const Header = () => (
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/services">Services</Link>
-        <Link to="/portfolio">Portfolio</Link>
-        <Link to="/contact">Contact</Link>
+        {/*<Link to="/portfolio">Portfolio</Link> */}
+        {/*<Link to="/contact">Contact</Link>*/}
       </nav>
     </div>
   </header>
@@ -32,38 +53,16 @@ const Home = () => (
       <p>Custom websites, branding & SEO to grow your business digitally.</p>
       <Link className="cta" to="/contact">Let's Talk</Link>
     </div>
+  
 
-    {/* Services Summary */}
-   <div id="services" className="home-section services-preview">
-  <div className="container">
-    <h3>What We Do</h3>
-    <div className="services-grid">
-      <div className="service-card">
-        <h4>Website Development</h4>
-        <p>Custom-coded, high-performance websites tailored to your brand and business goals.</p>
-        <Link to="/services#web-development">Learn more</Link>
-      </div>
-      <div className="service-card">
-        <h4>E-Commerce Solutions</h4>
-        <p>We build scalable online stores with cart, checkout, inventory, and payment integrations.</p>
-        <Link to="/services#ecommerce">Learn more</Link>
-      </div>
-      <div className="service-card">
-        <h4>Brand Identity</h4>
-        <p>From logo design to color palettes, we help create a memorable brand experience.</p>
-        <Link to="/services#branding">Learn more</Link>
-      </div>
-      <div className="service-card">
-        <h4>SEO & Analytics</h4>
-        <p>Boost your visibility on Google and track performance with custom analytics dashboards.</p>
-        <Link to="/services#seo">Learn more</Link>
-      </div>
-    </div>
-  </div>
-</div>
+
+ <Services />
+
+
 
     {/* Mini Portfolio */}
-    <div className="home-section portfolio-preview">
+   
+{/* <div className="home-section portfolio-preview">
       <div className="container">
         <h3>Recent Projects</h3>
         <div className="portfolio-grid">
@@ -80,7 +79,27 @@ const Home = () => (
         </div>
         <Link className="cta" to="/portfolio">View Full Portfolio</Link>
       </div>
-    </div>
+    </div> */}
+
+
+ <section className="why-choose-us">
+  <div className="container">
+    <h2 className="section-title">Why Choose DevOpinions?</h2>
+    <ul className="bullet-list">
+      <li><span>⚡</span> Agile and modern development practices for faster delivery.</li>
+      <li><span>💬</span> Transparent and proactive communication throughout the project.</li>
+      <li><span>🎯</span> Pixel-perfect, performance-first approach to every design.</li>
+      <li><span>🤝</span> Long-term partnership mentality — we grow as you grow.</li>
+      <li><span>🔍</span> Deep focus on SEO, accessibility, and scalability.</li>
+      <li><span>🛠️</span> Post-launch support, training, and on-demand maintenance.</li>
+      <li><span>🌐</span> API, cloud, and third-party service integrations made seamless.</li>
+      <li><span>📈</span> Proven success with eCommerce, portfolio, and enterprise clients.</li>
+    </ul>
+  </div>
+</section>
+
+
+
 
    <div className="testimonial-carousel">
   <div className="carousel-track">
@@ -96,9 +115,19 @@ const Home = () => (
       <p>"Super responsive and talented group. Our SEO has never been better."</p>
       <h5>- Anjali Verma</h5>
     </div>
+    <div className="testimonial-card">
+      <p>"Talented and committed team."</p>
+      <h5>- Sushant Vaidya</h5>
+    </div>
+    <div className="testimonial-card">
+      <p>"Our business grew 10x after joining DevOpinions"</p>
+      <h5>- Vishal Rajput</h5>
+    </div>
+    
     
   </div>
 </div>
+
 
     {/* Contact CTA */}
     <div className="home-section call-to-action">
@@ -120,21 +149,61 @@ const About = () => (
     </div>
   </section>
 );
-
 const Services = () => (
-  <section className="page">
+  <section className="services-section page">
     <div className="container">
-      <h2>Our Services</h2>
-      <ul>
-        <li>Responsive Website Development</li>
-        <li>E-commerce Solutions</li>
-        <li>Branding & Design</li>
-        <li>SEO Optimization</li>
-      </ul>
+      <h2 className="section-title">Our Services</h2>
+      <div className="services-grid">
+        {[
+          {
+            title: "Web Development",
+            desc: "Modern, responsive custom websites and web apps for your business.",
+            icon: "💻",
+            link: "/services/web-development",
+          },
+          {
+            title: "UI/UX Design",
+            desc: "Elegant, user-focused designs for web and mobile interfaces.",
+            icon: "🎨",
+            link: "/services/ui-ux",
+          },
+          {
+            title: "SEO & Optimization",
+            desc: "Optimize for speed, accessibility, and discoverability on Google.",
+            icon: "🚀",
+            link: "/services/seo",
+          },
+          {
+            title: "E-commerce Solutions",
+            desc: "Custom online stores and integrations that convert.",
+            icon: "🛒",
+            link: "/services/ecommerce",
+          },
+          {
+            title: "Maintenance & Support",
+            desc: "Ongoing updates, monitoring, and help as you grow.",
+            icon: "🔧",
+            link: "/services/maintenance",
+          },
+          {
+            title: "Cloud & API Integrations",
+            desc: "Connect your website to modern SaaS, APIs, and automation.",
+            icon: "☁️",
+            link: "/services/cloud",
+          },
+        ].map((service) => (
+          <Link to={service.link} key={service.title} className="service-card">
+            <span className="icon">{service.icon}</span>
+            <h3>{service.title}</h3>
+            <p>{service.desc}</p>
+          </Link>
+        ))}
+      </div>
     </div>
   </section>
 );
 
+{/*
 const Portfolio = () => (
   <section className="page">
     <div className="container">
@@ -159,7 +228,7 @@ const Portfolio = () => (
     </div>
   </section>
 );
-
+*/}
 
 const Contact = () => (
   <section className="page">
@@ -184,8 +253,15 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="contact" element={<Contact/>}/>
+         {/* <Route path="/portfolio" element={<Portfolio />} />*/} 
+          <Route path="/services/web-development" element={<WebDevelopment />} />
+           <Route path="/services/ui-ux" element={<UiUxDesign />} />
+            <Route path="/services/seo" element={<SeoOptimization />} />
+             <Route path="/services/ecommerce" element={<EcommerceSolutions />} />
+             <Route path="/services/maintenance" element={<Maintenance />} />
+             <Route path="/services/cloud" element={<CloudIntegrations />} />
+
         </Routes>
       </main>
       <Footer />
@@ -193,4 +269,4 @@ const App = () => (
   </Router>
 );
 
-export default App;
+export default App;   
