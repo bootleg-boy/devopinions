@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalpesh Deshmukh - Software Developer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" sizes="any" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
     <style>
         * {
             margin: 0;
@@ -84,7 +87,7 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: 30vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -99,6 +102,12 @@
             opacity: 0;
             animation: fadeInUp 1s ease forwards;
         }
+        /* .hero-content h1 .location {
+            font-size: 2rem; 
+            margin-left: 0.5rem; 
+            vertical-align: middle; 
+        } */
+
 
         .hero-content p {
             font-size: 1.2rem;
@@ -127,7 +136,7 @@
 
         /* Sections */
         section {
-            padding: 80px 0;
+            padding: 30px 0;
         }
 
         .about, .projects, .contact {
@@ -192,22 +201,23 @@
             color: white;
         }
 
-   .profile-image {
-  width: 100%;
-  max-width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  margin: 0 auto;
-  overflow: hidden; /* ensures nothing spills out */
-}
+        .profile-image {
+          width: 100%;
+          max-width: 300px;
+          height: 300px;
+          border-radius: 50%;
+          margin: 0 auto;
+          overflow: hidden; /* ensures nothing spills out */
+        }
 
-.profile-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-}
+        .profile-image img {
+          margin-top: -25px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+          display: block;
+        }
 
 
         /* Projects Section */
@@ -236,13 +246,22 @@
 
         .project-image {
             height: 200px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #667eea, #303f5742);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 3rem;
         }
+
+        .project-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px; /* optional */
+        object-fit: cover;  /* optional if using fixed container sizes */
+        }
+
 
         .project-content {
             padding: 2rem;
@@ -329,6 +348,12 @@
             color: #667eea;
         }
 
+        .contact-logo {
+            width: 40px;
+            height: 40px;
+            margin-bottom: -7px;
+            vertical-align: middle;
+        }
         /* Footer */
         footer {
             background: #333;
@@ -417,24 +442,30 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Software Developer</h1>
+            <h1>
+              Software Developer 
+              <span class="location">📍 London</span>
+            </h1>
             <p>Building amazing digital experiences with clean, efficient code</p>
             <a href="#projects" class="cta-button">View My Work</a>
+            <a href="#contact" class="cta-button">Coding Badges</a>
+            <a href="Kalpesh_CV.pdf" class="cta-button" target="_blank" rel="noopener noreferrer">Résumé</a>
+
         </div>
     </section>
 
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="profile-image">
                     <i class="fas fa-user"></i>
-                    <img src="DSCF4007.JPG" alt="Kalpesh Deshmukh">
+                    <img src="Face1.JPG" alt="Kalpesh Deshmukh">
                 </div>
                 <div class="about-text">
-                    <h3>Hello, I'm a passionate software developer</h3>
-                    <p>With over 5 years of experience in full-stack development, I specialize in creating robust, scalable applications that solve real-world problems. I'm passionate about clean code, user experience, and staying up-to-date with the latest technologies.</p>
-                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.</p>
+                    <h3>Hello ! </h3>
+                    <p>I’m a software engineer with 4+ years of experience architecting and implementing full-stack systems. I specialize in building high-performance, scalable applications leveraging modern frameworks, cloud infrastructure, and API-driven architectures. My expertise spans front-end frameworks (Angular, React, Vue), backend platforms (.NET, Python, Spring Boot, Laravel), and database ecosystems (SQL/NoSQL), with hands-on experience in CI/CD pipelines, DevOps automation, and low-level system programming.
+
+                    I thrive on solving complex engineering problems, optimizing system performance, and designing intuitive, data-driven user experiences. Outside of coding, I actively explore emerging technologies, contribute to open-source projects, and create technical content to share insights with the developer community.</p>
                     <div class="skills">
                         <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">React</span>
@@ -456,23 +487,23 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-shopping-cart"></i>
+                        <img src="CoffeeOS.png" alt="coffee-os"></i>
                     </div>
                     <div class="project-content">
-                        <h3>E-Commerce Platform</h3>
-                        <p>A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.</p>
+                        <h3>Coffee Operating System</h3>
+                        <p>A fully custom Linux-based operating environment architected from first principles, integrating a decentralized blockchain ledger for tamper-proof, cryptographically verifiable system logging for mission-critical infrastructures such as nuclear control networks and national security systems.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Stripe</span>
+                            <span class="tech-tag">Linux From Scratch</span>
+                            <span class="tech-tag">Bash Scripting</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Python</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">
+                            <a href="https://github.com/bootleg-boy/coffeeOS" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> Code
                             </a>
                             <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
+                                <i class="fas fa-external-link-alt"></i> Official Documentation
                             </a>
                         </div>
                     </div>
@@ -483,13 +514,14 @@
                         <i class="fas fa-tasks"></i>
                     </div>
                     <div class="project-content">
-                        <h3>Task Management App</h3>
-                        <p>A collaborative task management application with real-time updates and team collaboration features.</p>
+                        <h3>Real-Time Cloud-Linked Stock Portfolio Visualizer</h3>
+                        <p>A Python-powered interactive dashboard that connects to a cloud-hosted portfolio (Google Sheets/Excel) and visualizes real-time stock performance. Tracks portfolio value, profit/loss, and asset allocation using live market data from free APIs. Built with Pandas for data processing and Streamlit + Plotly for dynamic, web-based visualization. Designed as a lightweight, fully automated personal finance analytics tool, deployable on free cloud platforms.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">Socket.io</span>
-                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Plotly/Streamlit</span>
+                            <span class="tech-tag">GitHub Actions automation</span>
+                            <span class="tech-tag">Cloud deployment</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">
@@ -502,7 +534,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -594,7 +626,7 @@
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -604,19 +636,28 @@
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
-                <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology. Feel free to reach out!</p>
+                <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology. Feel free to reach out at <b>KALPESH.19@HOTMAIL.COM</b></p>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:your.email@example.com">your.email@example.com</a>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png" alt="Hackerrank" class="contact-logo">
+                        <a href="https://www.hackerrank.com/profile/kalpeshdes" target="_blank" rel="noopener noreferrer">                            
+                            Hackerrank-@KalpeshDeshmukh
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" class="contact-logo">
+                        <a href="https://leetcode.com/u/bootleg-boy/" target="_blank" rel="noopener noreferrer">                            
+                            LeetCode-@KalpeshDeshmukh
+                        </a>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-linkedin"></i>
-                        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/kalpesh-deshmukh1" target="_blank" rel="noopener noreferrer">LinkedIn-@KalpeshDeshmukh</a>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-github"></i>
-                        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                        <a href="https://github.com/bootleg-boy" target="_blank" rel="noopener noreferrer">GitHub-@KalpeshDeshmukh</a>
                     </div>
                 </div>
             </div>
@@ -625,7 +666,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
+            <p>&copy; </p>
         </div>
     </footer>
 
