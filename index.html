@@ -54,6 +54,22 @@
             color: #667eea;
         }
 
+        .seed-logo {
+            font-size: 0.8em;
+            font-weight: bold;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .seed-logo::before {
+            content: "🌱";
+            font-size: 1.2em;
+        }
+
+
         .nav-links {
             display: flex;
             list-style: none;
@@ -510,7 +526,7 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-tasks"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="project-content">
                         <h3>Real-Time Cloud-Linked Stock Portfolio Visualizer</h3>
@@ -533,31 +549,37 @@
                     </div>
                 </div>
 
-                <!-- <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Data Visualization Dashboard</h3>
-                        <p>An interactive dashboard for visualizing complex datasets with real-time charts and analytics.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">D3.js</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">FastAPI</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="project-card">
+    <div class="project-image">
+        <a 
+            href="https://bootleg-boy.github.io/vanaprasta/"
+            target="_blank"
+            rel="noopener"
+            class="seed-logo"
+        >
+            Vanaprastha
+        </a>
+    </div>
+
+    <div class="project-content">
+        <h3>Vanaprasta Foundation</h3>
+        <p>A website for a Non Governing Organisation. This website is packed with SEO content to rank up in google searches.</p>
+
+        <div class="project-tech">
+            <span class="tech-tag">SEO</span>
+            <span class="tech-tag">Github Actions</span>
+        </div>
+
+        <div class="project-links">
+            
+            <a href="https://bootleg-boy.github.io/vanaprasta/" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+        </div>
+    </div>
+</div>
+
+               <!--  <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
@@ -723,28 +745,7 @@
             console.log('Mobile menu clicked');
         });
 
-        // Add typing effect to hero title
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            function typing() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(typing, speed);
-                }
-            }
-            typing();
-        }
-
-        // Initialize typing effect when page loads
-        window.addEventListener('load', function() {
-            const heroTitle = document.querySelector('.hero-content h1');
-            const originalText = heroTitle.textContent;
-            setTimeout(() => {
-                typeWriter(heroTitle, originalText, 100);
-            }, 1000);
-        });
+        
     </script>
 </body>
 </html>
