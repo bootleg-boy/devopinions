@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,438 +8,67 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" sizes="any" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
+    <link rel="stylesheet" href="myCss.css">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+       <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        .seed-logo {
-            font-size: 0.8em;
-            font-weight: bold;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .seed-logo::before {
-            content: "🌱";
-            font-size: 1.2em;
-        }
-
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #667eea;
-        }
-
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .mobile-menu span {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 30vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding-top: 80px;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease forwards;
-        }
-        /* .hero-content h1 .location {
-            font-size: 2rem; 
-            margin-left: 0.5rem; 
-            vertical-align: middle; 
-        } */
-
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.2s forwards;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.4s forwards;
-        }
-
-        .cta-button:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        /* Sections */
-        section {
-            padding: 30px 0;
-        }
-
-        .about, .projects, .contact {
-            background: white;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: #667eea;
-            margin: 20px auto;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #667eea;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .skill-tag {
-            background: #f8f9ff;
-            color: #667eea;
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            border: 2px solid #667eea;
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        .profile-image {
-          width: 100%;
-          max-width: 300px;
-          height: 300px;
-          border-radius: 50%;
-          margin: 0 auto;
-          overflow: hidden; /* ensures nothing spills out */
-        }
-
-        .profile-image img {
-          margin-top: -25px;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 50%;
-          display: block;
-        }
-
-
-        /* Projects Section */
-        .projects {
-            background: #f8f9ff;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-image {
-            height: 200px;
-            background: linear-gradient(135deg, #667eea, #303f5742);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-
-        .project-image img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 8px; /* optional */
-        object-fit: cover;  /* optional if using fixed container sizes */
-        }
-
-
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .project-content p {
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-tag {
-            background: #f0f2ff;
-            color: #667eea;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-link {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .project-link:hover {
-            color: #764ba2;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .contact-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .contact-item i {
-            font-size: 2rem;
-            color: #667eea;
-        }
-
-        .contact-item a {
-            color: #333;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item a:hover {
-            color: #667eea;
-        }
-
-        .contact-logo {
-            width: 40px;
-            height: 40px;
-            margin-bottom: -7px;
-            vertical-align: middle;
-        }
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
+        // Header background change on scroll
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.toggle("scrolled", window.scrollY > 100);
+            } else {
+                header.classList.toggle("scrolled", window.scrollY > 100);
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        });
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-            .mobile-menu {
-                display: flex;
-            }
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
 
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
+        // Observe project cards for animation
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(50px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
 
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
+        // Mobile menu functionality (you can expand this)
+        document.querySelector('.mobile-menu').addEventListener('click', function () {
+            // Add mobile menu toggle functionality here if needed
+            console.log('Mobile menu clicked');
+        });
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
 
-            .contact-info {
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    </script>
 </head>
-<body>
+
+<body class="background-c">
     <header>
         <nav class="container">
             <div class="logo">KALPESH DESHMUKH</div>
@@ -459,8 +89,8 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>
-              Software Developer 
-              <span class="location">📍 London</span>
+                Software Developer
+                <span class="location">📍 London</span>
             </h1>
             <p>Building amazing digital experiences with clean, efficient code</p>
             <a href="#projects" class="cta-button">View My Work</a>
@@ -478,9 +108,17 @@
                 </div>
                 <div class="about-text">
                     <h3>Hello ! </h3>
-                    <p>I’m a software engineer with 4+ years of experience architecting and implementing full-stack systems. I specialize in building high-performance, scalable applications leveraging modern frameworks, cloud infrastructure, and API-driven architectures. My expertise spans front-end frameworks (Angular, React, Vue), backend platforms (.NET, Python, Spring Boot, Laravel), and database ecosystems (SQL/NoSQL), with hands-on experience in CI/CD pipelines, DevOps automation, and low-level system programming.
+                    <p>I’m a software engineer with 4+ years of experience architecting and implementing full-stack
+                        systems. I specialize in building high-performance, scalable applications leveraging modern
+                        frameworks, cloud infrastructure, and API-driven architectures. My expertise spans front-end
+                        frameworks (Angular, React, Vue), backend platforms (.NET, Python, Spring Boot, Laravel), and
+                        database ecosystems (SQL/NoSQL), with hands-on experience in CI/CD pipelines, DevOps automation,
+                        and low-level system programming.
 
-                    I thrive on solving complex engineering problems, optimizing system performance, and designing intuitive, data-driven user experiences. Outside of coding, I actively explore emerging technologies, contribute to open-source projects, and create technical content to share insights with the developer community.</p>
+                        I thrive on solving complex engineering problems, optimizing system performance, and designing
+                        intuitive, data-driven user experiences. Outside of coding, I actively explore emerging
+                        technologies, contribute to open-source projects, and create technical content to share insights
+                        with the developer community.</p>
                     <div class="skills">
                         <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">React</span>
@@ -506,7 +144,10 @@
                     </div>
                     <div class="project-content">
                         <h3>Coffee Operating System</h3>
-                        <p>A fully custom Linux-based operating environment architected from first principles, integrating a decentralized blockchain ledger for tamper-proof, cryptographically verifiable system logging for mission-critical infrastructures such as nuclear control networks and national security systems.</p>
+                        <p>A fully custom Linux-based operating environment architected from first principles,
+                            integrating a decentralized blockchain ledger for tamper-proof, cryptographically verifiable
+                            system logging for mission-critical infrastructures such as nuclear control networks and
+                            national security systems.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Linux From Scratch</span>
                             <span class="tech-tag">Bash Scripting</span>
@@ -514,7 +155,8 @@
                             <span class="tech-tag">Python</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/bootleg-boy/coffeeOS" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/bootleg-boy/coffeeOS" class="project-link" target="_blank"
+                                rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> Code
                             </a>
                             <a href="#" class="project-link">
@@ -530,7 +172,12 @@
                     </div>
                     <div class="project-content">
                         <h3>Real-Time Cloud-Linked Stock Portfolio Visualizer</h3>
-                        <p>A Python-powered interactive dashboard that connects to a cloud-hosted portfolio (Google Sheets/Excel) and visualizes real-time stock performance. Tracks portfolio value, profit/loss, and asset allocation using live market data from free APIs. Built with Pandas for data processing and Streamlit + Plotly for dynamic, web-based visualization. Designed as a lightweight, fully automated personal finance analytics tool, deployable on free cloud platforms.</p>
+                        <p>A Python-powered interactive dashboard that connects to a cloud-hosted portfolio (Google
+                            Sheets/Excel) and visualizes real-time stock performance. Tracks portfolio value,
+                            profit/loss, and asset allocation using live market data from free APIs. Built with Pandas
+                            for data processing and Streamlit + Plotly for dynamic, web-based visualization. Designed as
+                            a lightweight, fully automated personal finance analytics tool, deployable on free cloud
+                            platforms.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Pandas</span>
@@ -550,106 +197,34 @@
                 </div>
 
                 <div class="project-card">
-    <div class="project-image">
-        <a 
-            href="https://bootleg-boy.github.io/vanaprasta/"
-            target="_blank"
-            rel="noopener"
-            class="seed-logo"
-        >
-            Vanaprastha
-        </a>
-    </div>
-
-    <div class="project-content">
-        <h3>Vanaprasta Foundation</h3>
-        <p>A website for a Non Governing Organisation. This website is packed with SEO content to rank up in google searches.</p>
-
-        <div class="project-tech">
-            <span class="tech-tag">SEO</span>
-            <span class="tech-tag">Github Actions</span>
-        </div>
-
-        <div class="project-links">
-            
-            <a href="https://bootleg-boy.github.io/vanaprasta/" class="project-link">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-            </a>
-        </div>
-    </div>
-</div>
-
-               <!--  <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-mobile-alt"></i>
+                        <a href="https://bootleg-boy.github.io/vanaprasta/" target="_blank" rel="noopener"
+                            class="seed-logo">
+                            Vanaprastha
+                        </a>
                     </div>
-                    <div class="project-content">
-                        <h3>Mobile Weather App</h3>
-                        <p>A cross-platform mobile application providing detailed weather forecasts with location-based services.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">Redux</span>
-                            <span class="tech-tag">Weather API</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> App Store
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-brain"></i>
-                    </div>
                     <div class="project-content">
-                        <h3>AI Chat Bot</h3>
-                        <p>An intelligent chatbot powered by machine learning algorithms for customer service automation.</p>
+                        <h3>Vanaprasta Foundation</h3>
+                        <p>A website for a Non Governing Organisation. This website is packed with SEO content to rank
+                            up in google searches.</p>
+
                         <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">Flask</span>
-                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">SEO</span>
+                            <span class="tech-tag">Github Actions</span>
                         </div>
+
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="#" class="project-link">
+
+                            <a href="https://bootleg-boy.github.io/vanaprasta/" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Code Snippet Manager</h3>
-                        <p>A developer tool for organizing, searching, and sharing code snippets with syntax highlighting.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Angular</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Prism.js</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
-                    </div> -->
-                </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -657,28 +232,34 @@
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
-                <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology. Feel free to reach out at <b>KALPESH.19@HOTMAIL.COM</b></p>
+                <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about
+                    technology. Feel free to reach out at <b>KALPESH.19@HOTMAIL.COM</b></p>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png" alt="Hackerrank" class="contact-logo">
-                        <a href="https://www.hackerrank.com/profile/kalpeshdes" target="_blank" rel="noopener noreferrer">                            
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png"
+                            alt="Hackerrank" class="contact-logo">
+                        <a href="https://www.hackerrank.com/profile/kalpeshdes" target="_blank"
+                            rel="noopener noreferrer">
                             Hackerrank-@KalpeshDeshmukh
                         </a>
                     </div>
 
                     <div class="contact-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" class="contact-logo">
-                        <a href="https://leetcode.com/u/bootleg-boy/" target="_blank" rel="noopener noreferrer">                            
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
+                            alt="LeetCode" class="contact-logo">
+                        <a href="https://leetcode.com/u/bootleg-boy/" target="_blank" rel="noopener noreferrer">
                             LeetCode-@KalpeshDeshmukh
                         </a>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-linkedin"></i>
-                        <a href="https://www.linkedin.com/in/kalpesh-deshmukh1" target="_blank" rel="noopener noreferrer">LinkedIn-@KalpeshDeshmukh</a>
+                        <a href="https://www.linkedin.com/in/kalpesh-deshmukh1" target="_blank"
+                            rel="noopener noreferrer">LinkedIn-@KalpeshDeshmukh</a>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-github"></i>
-                        <a href="https://github.com/bootleg-boy" target="_blank" rel="noopener noreferrer">GitHub-@KalpeshDeshmukh</a>
+                        <a href="https://github.com/bootleg-boy" target="_blank"
+                            rel="noopener noreferrer">GitHub-@KalpeshDeshmukh</a>
                     </div>
                 </div>
             </div>
@@ -691,61 +272,6 @@
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Header background change on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe project cards for animation
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(50px)';
-            card.style.transition = 'all 0.6s ease';
-            observer.observe(card);
-        });
-
-        // Mobile menu functionality (you can expand this)
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            // Add mobile menu toggle functionality here if needed
-            console.log('Mobile menu clicked');
-        });
-
-        
-    </script>
 </body>
+
 </html>
