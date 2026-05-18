@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const fmt = (d: Date) =>
+  new Intl.DateTimeFormat('en-GB', { year: 'numeric', month: 'short' }).format(d);
+---
+
+<BaseLayout
+  title="Projects"
+  description="Deep case studies of production systems I've built — the architecture, the trade-offs, the outcomes. Each one a real shipped feature with measurable impact."
+>
+  <div class="list-page">
+    <div class="list-header">
+      <div class="s-eyebrow">Case Studies</div>
+      <h1 class="s-title">Things <em>built &amp; shipped</em></h1>
+      <p class="list-intro">
+        Deep dives into the systems behind the numbers on the homepage. The architecture, what broke,
+        what got chosen and why. Written for engineers who want the actual engineering, not the highlights.
+      </p>
+    </div>
+
+    {projects.length === 0 ? (
+      <p class="list-intro">Project case studies coming soon.</p>
+    ) : (
+      <div class="entry-list">
+        {projects.map((project) => (
+          <a href={`/projects/${project.id}`} style="display: contents;">
+            <article class="entry">
+              <time class="entry-date" datetime={project.data.date.toISOString()}>{fmt(project.data.date)}</time>
+              <div>
+                <h2 class="entry-title"><span>{project.data.title}</span></h2>
+                <p class="entry-desc">{project.data.description}</p>
+                {project.data.stack.length > 0 && (
+                  <div class="entry-tags">
+                    {project.data.stack.map((t) => <span class="entry-tag">{t}</span>)}
+                  </div>
+                )}
+              </div>
+              <span class="entry-arrow">→</span>
+            </article>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</BaseLayout>

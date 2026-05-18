@@ -1,0 +1,655 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+---
+
+<BaseLayout
+  title={`${SITE.author.name} — Full Stack Developer`}
+  description="Full Stack Developer & Technical Lead. Building production systems end-to-end on Azure, Angular and ASP.NET."
+>
+  <!-- ════ HERO ════ -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">
+        <div class="hero-tag-line"></div>
+        Full Stack Developer &amp; Technical Lead
+      </div>
+      <h1 class="hero-name">
+        Kalpesh<br>
+        <span class="hero-name-last">Deshmukh</span>
+      </h1>
+      <p class="hero-byline">
+        5+ years building <strong>production systems end-to-end</strong> —
+        from Azure cloud infrastructure and deployment pipelines to on-site client discovery
+        and stakeholder management. First-principles thinking that ships.
+      </p>
+      <div class="hero-cta">
+        <a href="/blog" class="btn-fill">Read the blog ↗</a>
+        <a href="mailto:kalpesh.19@hotmail.com" class="btn-line">Get in touch</a>
+        <a href="https://linkedin.com/in/kalpesh-deshmukh1" class="btn-line" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-val">97%</div><div class="stat-lbl">Load time cut</div></div>
+        <div><div class="stat-val">90%</div><div class="stat-lbl">Downtime reduced</div></div>
+        <div><div class="stat-val">1k+</div><div class="stat-lbl">Daily users</div></div>
+        <div><div class="stat-val">5+</div><div class="stat-lbl">Years shipping</div></div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="photo-frame">
+        <div class="photo-frame-inner">
+          <img src="/dp.webp" alt="Kalpesh Deshmukh" />
+        </div>
+      </div>
+
+      <div class="photo-caption">
+        <strong>Kalpesh Deshmukh</strong><br>
+        Birmingham / Remote · UK<br>
+        devopinions.com
+      </div>
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        Open to opportunities
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ JOURNEY ════ -->
+  <hr class="divider">
+  <section class="section" id="journey">
+    <div class="rev">
+      <div class="s-eyebrow">Career Journey</div>
+      <h2 class="s-title">The work that <em>built the engineer</em></h2>
+    </div>
+
+    <div class="tl-container">
+
+      <div class="tl-entry">
+        <div class="tl-date">Nov 2023<br>→ Present</div>
+        <div class="tl-body">
+          <div class="tl-role-label">Full Stack Developer &amp; Acting Technical Lead</div>
+          <h3>Agile Software Systems</h3>
+          <div class="tl-location">Birmingham / Remote, UK</div>
+          <p class="tl-desc">Stepped up from contributor to full technical owner. Architecting and leading the complete delivery lifecycle of a production platform serving 1,000+ users daily — owning Azure infrastructure, deployment pipelines, sprint planning, on-site client discovery, and direct stakeholder communication.</p>
+          <div class="tl-bullets">
+            <div class="tl-bullet">Jamstack-inspired architecture — prerendering, CDN delivery and delta-sync pipeline eliminating cold API calls across 1,000+ product pages</div>
+            <div class="tl-bullet">Deployment downtime cut 90% — 10 minutes to under 60 seconds via Azure Storage + FrontDoor CDN rearchitecture</div>
+            <div class="tl-bullet">Recovered 1,000+ unindexed Angular SPA product pages from Google — self-directed prerendering + hydration without SSR infrastructure</div>
+            <div class="tl-bullet">End-to-end 2D DXF cutting plan renderer — DXF → ASP.NET → Service Bus → Azure Functions → CosmosDB → Canvas/SVG</div>
+            <div class="tl-bullet">List architecture redesign serving 15k+ quotes — load time from 15 seconds to under 0.5 seconds</div>
+            <div class="tl-bullet">Migrated legacy Python API to ASP.NET 9 — response time 10s → 2s, eliminating expensive Redis caching layer</div>
+            <div class="tl-bullet">MongoDB race condition fix — atomic sequence generator eliminating duplicate order IDs; live migration of 30,000+ documents</div>
+            <div class="tl-bullet">SagePay live payment integration including edge-case error recovery in production order flow</div>
+          </div>
+          <div class="tl-pills">
+            <span class="tl-pill">Angular</span><span class="tl-pill">ASP.NET 9</span><span class="tl-pill">Python</span>
+            <span class="tl-pill">Azure Functions</span><span class="tl-pill">CosmosDB / MongoDB</span>
+            <span class="tl-pill">Azure FrontDoor</span><span class="tl-pill">Service Bus</span>
+            <span class="tl-pill">RxJS</span><span class="tl-pill">SagePay</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-date">2021<br>→ 2023</div>
+        <div class="tl-body">
+          <div class="tl-role-label">MSc Advanced Computer Science · Grade 2:1</div>
+          <h3>Swansea University</h3>
+          <div class="tl-location">Swansea, UK</div>
+          <p class="tl-desc">Deepened the theoretical foundation with rigorous academic CS — from systems architecture to low-level programming. The kind of grounding that separates engineers who understand their tools from those who only use them.</p>
+          <div class="tl-bullets">
+            <div class="tl-bullet">Custom Linux OS built from scratch in C++ and Bash, with blockchain-based transaction recording for filesystem integrity</div>
+            <div class="tl-bullet">System daemons for process scheduling, file management and resource allocation — modifying low-level Linux C packages</div>
+            <div class="tl-bullet">Graduated 2:1 — CS fundamentals that inform every architecture decision since</div>
+          </div>
+          <div class="tl-pills">
+            <span class="tl-pill">C++</span><span class="tl-pill">Bash</span>
+            <span class="tl-pill">OS Design</span><span class="tl-pill">Blockchain</span>
+            <span class="tl-pill">Systems Architecture</span><span class="tl-pill">Low-level Programming</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-date">Apr 2020<br>→ Jul 2021</div>
+        <div class="tl-body">
+          <div class="tl-role-label">Junior Full Stack Developer</div>
+          <h3>Prakat Solutions</h3>
+          <div class="tl-location">Bangalore, India · OTCQB: DFCO 'Dalrada'</div>
+          <p class="tl-desc">Started professionally in enterprise healthcare software, building patient monitoring platforms used in clinical environments. Established the discipline of TDD, clean API design, and documentation that has persisted throughout.</p>
+          <div class="tl-bullets">
+            <div class="tl-bullet">Patient monitoring platforms — Annual Wellness Visit forms, doctor listings, eligibility management in clinical environments</div>
+            <div class="tl-bullet">RESTful APIs and Vue components within a microservices architecture handling sensitive clinical data</div>
+            <div class="tl-bullet">TDD with Maven; API back-testing to surface and resolve performance bottlenecks</div>
+          </div>
+          <div class="tl-pills">
+            <span class="tl-pill">Vue.js</span><span class="tl-pill">Java Spring Boot</span>
+            <span class="tl-pill">Hibernate</span><span class="tl-pill">PostgreSQL</span>
+            <span class="tl-pill">REST APIs</span><span class="tl-pill">TDD / Maven</span><span class="tl-pill">Microservices</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════ IMPACT ════ -->
+  <hr class="divider">
+  <section class="section" id="impact">
+    <div class="rev">
+      <div class="s-eyebrow">Technical Impact</div>
+      <h2 class="s-title">Numbers that made it <em>to production</em></h2>
+    </div>
+
+    <div class="ach-list">
+
+      <div class="ach-row">
+        <div class="ach-num-col">1000<span class="ach-num-unit">pages indexed</span></div>
+        <div>
+          <div class="ach-text-title">Critical SEO Recovery — Angular SPA</div>
+          <div class="ach-text-desc">Diagnosed a live Angular SPA where all 1,000+ product pages were invisible to Google. Self-directed the implementation of Angular prerendering and hydration, identifying 4MB page bloat as the root cause of Googlebot crawl failure. Restored full site crawlability without expensive SSR infrastructure.</div>
+          <div class="ach-tags">
+            <span class="ach-tag">Angular Prerendering</span><span class="ach-tag">Hydration</span>
+            <span class="ach-tag">Googlebot</span><span class="ach-tag">SEO Architecture</span><span class="ach-tag">4MB → crawlable</span>
+          </div>
+        </div>
+        <div class="ach-idx">01 / 06</div>
+      </div>
+
+      <div class="ach-row">
+        <div class="ach-num-col">97%<span class="ach-num-unit">load time cut · 15s → 0.5s</span></div>
+        <div>
+          <div class="ach-text-title">Instant List Loading — 15,000+ Records</div>
+          <div class="ach-text-desc">Redesigned quote, order and user list architecture serving 15,000+ quotes and 10,000+ records. Replaced a single slow query with a hybrid strategy — lightweight 300-document initial load with client-side search, deep backend fallback on demand.</div>
+          <div class="ach-tags">
+            <span class="ach-tag">CosmosDB</span><span class="ach-tag">Angular</span>
+            <span class="ach-tag">Hybrid Search</span><span class="ach-tag">15,000+ Quotes</span>
+          </div>
+        </div>
+        <div class="ach-idx">02 / 06</div>
+      </div>
+
+      <div class="ach-row">
+        <div class="ach-num-col">90%<span class="ach-num-unit">less downtime · 10 min → 60 sec</span></div>
+        <div>
+          <div class="ach-text-title">Near-Zero Downtime Deployment Pipeline</div>
+          <div class="ach-text-desc">Rearchitected the Azure deployment pipeline around prerendered static output — Azure Storage Account + FrontDoor CDN with compression, caching headers and transfer optimisation. Production downtime cut from 10 minutes to under 60 seconds.</div>
+          <div class="ach-tags">
+            <span class="ach-tag">Azure FrontDoor</span><span class="ach-tag">CDN</span>
+            <span class="ach-tag">Azure Storage</span><span class="ach-tag">CI/CD</span>
+          </div>
+        </div>
+        <div class="ach-idx">03 / 06</div>
+      </div>
+
+      <div class="ach-row">
+        <div class="ach-num-col">E2E<span class="ach-num-unit">DXF to canvas pipeline</span></div>
+        <div>
+          <div class="ach-text-title">2D Interactive DXF Cutting Plan Renderer</div>
+          <div class="ach-text-desc">Complete end-to-end cutting plan feature engineered from scratch. DXF files ingested via ASP.NET, geometric data published to Azure Service Bus, processed asynchronously through Azure Functions, persisted to CosmosDB, and rendered as interactive vector layouts in Angular via Canvas and SVG APIs.</div>
+          <div class="ach-tags">
+            <span class="ach-tag">DXF Parsing</span><span class="ach-tag">ASP.NET</span>
+            <span class="ach-tag">Azure Service Bus</span><span class="ach-tag">Azure Functions</span>
+            <span class="ach-tag">CosmosDB</span><span class="ach-tag">Canvas API</span><span class="ach-tag">SVG</span>
+          </div>
+        </div>
+        <div class="ach-idx">04 / 06</div>
+      </div>
+
+      <div class="ach-row">
+        <div class="ach-num-col">0<span class="ach-num-unit">duplicate orders after fix</span></div>
+        <div>
+          <div class="ach-text-title">MongoDB Race Condition &amp; Live Schema Migration</div>
+          <div class="ach-text-desc">Traced and eliminated a concurrency bug causing duplicate order IDs — implemented an atomic sequence generator in MongoDB. Also led a live schema migration converting incorrectly stored date strings to DateTime types across 3 collections and 30,000+ documents.</div>
+          <div class="ach-tags">
+            <span class="ach-tag">MongoDB</span><span class="ach-tag">Atomic Operations</span>
+            <span class="ach-tag">Schema Migration</span><span class="ach-tag">30,000+ Documents</span>
+          </div>
+        </div>
+        <div class="ach-idx">05 / 06</div>
+      </div>
+
+      <div class="ach-row">
+        <div class="ach-num-col">0s<span class="ach-num-unit">perceived wait · was 15 seconds</span></div>
+        <div>
+          <div class="ach-text-title">Instant Quote Submission UX</div>
+          <div class="ach-text-desc">Redesigned the quote submission flow by decoupling the user-facing response from Azure Service Bus processing. Users receive instant confirmation while guaranteed async delivery continues in the background — 15 seconds of perceived wait eliminated without compromising reliability.</div>
+          <div class="ach-tags">
+            <span class="ach-tag">Azure Service Bus</span><span class="ach-tag">Async Architecture</span>
+            <span class="ach-tag">UX Design</span><span class="ach-tag">Decoupled Flow</span>
+          </div>
+        </div>
+        <div class="ach-idx">06 / 06</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════ STACK ════ -->
+  <hr class="divider">
+  <section class="section" id="stack">
+    <div class="rev">
+      <div class="s-eyebrow">Technical Stack</div>
+      <h2 class="s-title">Tools built into <em>muscle memory</em></h2>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-cell rev d1">
+        <div class="stack-cat">Frontend</div>
+        <div class="stack-items">
+          <div class="stack-item">Angular / TypeScript</div>
+          <div class="stack-item">Vue.js</div>
+          <div class="stack-item">RxJS / Observables</div>
+          <div class="stack-item">Canvas API &amp; SVG</div>
+          <div class="stack-item">Angular Prerendering</div>
+          <div class="stack-item">State Hydration</div>
+        </div>
+      </div>
+      <div class="stack-cell rev d2">
+        <div class="stack-cat">Backend</div>
+        <div class="stack-items">
+          <div class="stack-item">ASP.NET 9 / C#</div>
+          <div class="stack-item">Python</div>
+          <div class="stack-item">Java Spring Boot</div>
+          <div class="stack-item">Azure Functions</div>
+          <div class="stack-item">REST API Design</div>
+          <div class="stack-item">Microservices</div>
+        </div>
+      </div>
+      <div class="stack-cell rev d3">
+        <div class="stack-cat">Cloud &amp; Infrastructure</div>
+        <div class="stack-items">
+          <div class="stack-item">Azure FrontDoor / CDN</div>
+          <div class="stack-item">Azure Storage Account</div>
+          <div class="stack-item">Azure Service Bus</div>
+          <div class="stack-item">CI/CD Pipelines</div>
+          <div class="stack-item">Git Branching Strategy</div>
+          <div class="stack-item">Deployment Architecture</div>
+        </div>
+      </div>
+      <div class="stack-cell rev d4">
+        <div class="stack-cat">Data &amp; Delivery</div>
+        <div class="stack-items">
+          <div class="stack-item">CosmosDB / MongoDB</div>
+          <div class="stack-item">PostgreSQL</div>
+          <div class="stack-item">Live Schema Migrations</div>
+          <div class="stack-item">Atomic Operations</div>
+          <div class="stack-item">Delta Sync Pipelines</div>
+          <div class="stack-item">SagePay Integration</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<!--
+  ════════════════════════════════════════════════════════════════════
+  HOMEPAGE-SPECIFIC STYLES (scoped using is:global so they work with
+  these existing class names without needing to refactor them).
+
+  Why is:global? By default, an Astro <style> block scopes classes to
+  the page by appending a hash to selectors. That breaks the existing
+  global class names used here. `is:global` keeps the rules unscoped
+  but they still only ship on this page — Astro inlines them per route.
+
+  CSS tokens (var(--gold), var(--cream)…) come from global.css which
+  is already loaded by BaseLayout.
+  ════════════════════════════════════════════════════════════════════
+-->
+<style is:global>
+  /* ══ HERO ══ */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    padding: 0 3.5rem;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-left {
+    padding: 9rem 4rem 6rem 0;
+    border-right: 1px solid var(--border);
+  }
+
+  .hero-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.98rem; color: var(--gold);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 2rem;
+    display: flex; align-items: center; gap: 0.85rem;
+    opacity: 0; animation: rise 0.7s 0.1s forwards;
+  }
+  .hero-tag-line { width: 28px; height: 1px; background: var(--gold-dim); }
+
+  .hero-name {
+    font-size: clamp(4rem, 8.5vw, 7rem);
+    font-weight: 800; line-height: 0.9;
+    letter-spacing: -0.04em; color: var(--cream);
+    margin-bottom: 2.5rem;
+    opacity: 0; animation: rise 0.8s 0.25s forwards;
+  }
+  .hero-name-last {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--gold);
+  }
+
+  .hero-byline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.25rem; color: var(--muted2);
+    line-height: 1.85; max-width: 480px;
+    margin-bottom: 3rem;
+    opacity: 0; animation: rise 0.8s 0.4s forwards;
+  }
+  .hero-byline strong {
+    color: var(--cream); font-style: normal;
+    font-family: 'Syne', sans-serif; font-weight: 600;
+  }
+
+  .hero-cta {
+    display: flex; gap: 0.85rem; flex-wrap: wrap; align-items: center;
+    margin-bottom: 3.5rem;
+    opacity: 0; animation: rise 0.8s 0.55s forwards;
+  }
+  .btn-fill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--gold); color: var(--bg);
+    padding: 0.75rem 1.6rem; border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-fill:hover { background: var(--gold-pale); transform: translateY(-2px); }
+  .btn-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted2); border: 1px solid var(--border);
+    padding: 0.75rem 1.6rem; border-radius: 2px;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s;
+    display: inline-block;
+  }
+  .btn-line:hover { color: var(--cream); border-color: var(--muted); }
+
+  .hero-stats {
+    display: flex; gap: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border2);
+    opacity: 0; animation: rise 0.8s 0.7s forwards;
+  }
+  .stat-val {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.9rem; font-weight: 500;
+    color: var(--gold); letter-spacing: -0.02em; line-height: 1;
+  }
+  .stat-lbl {
+    font-size: 0.65rem; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.14em;
+    margin-top: 0.3rem;
+  }
+
+  /* ── PHOTO SIDE ── */
+  .hero-right {
+    padding: 9rem 0 6rem 3.5rem;
+    display: flex; flex-direction: column; gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .photo-frame {
+    width: 100%; aspect-ratio: 3/4; max-width: 300px;
+    position: relative;
+    opacity: 0; animation: rise 0.9s 0.5s forwards;
+  }
+  .photo-frame-inner {
+    width: 100%; height: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 0.75rem; overflow: hidden;
+    position: relative;
+  }
+  .photo-frame-inner::before,
+  .photo-frame-inner::after {
+    content: '';
+    position: absolute;
+    width: 20px; height: 20px;
+    border-color: var(--gold-dim); border-style: solid;
+  }
+  .photo-frame-inner::before { top: 10px; left: 10px; border-width: 1px 0 0 1px; }
+  .photo-frame-inner::after  { bottom: 10px; right: 10px; border-width: 0 1px 1px 0; }
+  .photo-frame-inner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .photo-caption {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.95rem; color: var(--muted);
+    letter-spacing: 0.1em; line-height: 1.8;
+    opacity: 0; animation: rise 0.8s 0.8s forwards;
+  }
+  .photo-caption strong { color: var(--gold); font-weight: 500; }
+
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.08em;
+    color: var(--green); background: rgba(92,184,122,0.08);
+    border: 1px solid rgba(92,184,122,0.2);
+    padding: 0.35rem 0.85rem; border-radius: 20px;
+    opacity: 0; animation: rise 0.8s 0.9s forwards;
+  }
+  .status-dot {
+    width: 5px; height: 5px; background: var(--green); border-radius: 50%;
+    animation: breathe 2.2s ease-in-out infinite;
+  }
+  @keyframes breathe { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  /* ══ SECTION BASE ══ */
+  .section { padding: 7rem 3.5rem; max-width: 1160px; margin: 0 auto; }
+
+  hr.divider { border: none; border-top: 1px solid var(--border2); max-width: 1160px; margin: 0 auto; }
+
+  /* ══ VERTICAL TIMELINE ══ */
+  .tl-container { position: relative; display: flex; flex-direction: column; }
+  .tl-container::before {
+    content: '';
+    position: absolute; top: 0; bottom: 0; left: 128px;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--border) 8%, var(--border) 92%, transparent);
+  }
+  .tl-entry {
+    display: grid; grid-template-columns: 128px 1fr;
+    padding-bottom: 4.5rem; position: relative;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .tl-entry.vis { opacity: 1; transform: translateY(0); }
+  .tl-entry::before {
+    content: ''; position: absolute;
+    top: 6px; left: 122px;
+    width: 13px; height: 13px; border-radius: 50%;
+    background: var(--bg); border: 2px solid var(--gold-dim);
+    transition: border-color 0.3s; z-index: 2;
+  }
+  .tl-entry:hover::before { border-color: var(--gold); }
+
+  .tl-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.96rem; color: var(--muted);
+    letter-spacing: 0.06em;
+    padding-top: 0.3rem; padding-right: 2rem;
+    text-align: right; line-height: 1.5;
+  }
+  .tl-body { padding-left: 2.75rem; }
+  .tl-role-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem; color: var(--gold);
+    letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.5rem;
+  }
+  .tl-body h3 {
+    font-size: 1.5rem; font-weight: 700; letter-spacing: -0.025em;
+    color: var(--cream); margin-bottom: 0.2rem;
+  }
+  .tl-location {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem; color: var(--muted);
+    letter-spacing: 0.06em; margin-bottom: 1.1rem;
+  }
+  .tl-desc {
+    font-family: var(--serif);
+    font-size: 0.98rem; color: var(--muted2);
+    line-height: 1.85; margin-bottom: 1.3rem; max-width: 600px;
+  }
+  .tl-bullets { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.4rem; }
+  .tl-bullet {
+    font-size: 0.95rem; color: var(--muted2);
+    display: grid; grid-template-columns: auto 1fr; gap: 0.6rem; line-height: 1.55;
+  }
+  .tl-bullet::before {
+    content: '→';
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem; color: var(--gold-dim); margin-top: 0.05rem;
+  }
+  .tl-pills { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .tl-pill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem; padding: 0.2rem 0.6rem;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 2px; color: var(--muted2); letter-spacing: 0.04em;
+  }
+
+  /* ══ ACHIEVEMENTS ══ */
+  .ach-list { display: flex; flex-direction: column; }
+  .ach-row {
+    display: grid; grid-template-columns: 180px 1fr auto;
+    gap: 0 3rem; padding: 3rem 0;
+    border-bottom: 1px solid var(--border2);
+    align-items: start;
+    opacity: 0; transform: translateX(-16px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+    position: relative; overflow: hidden;
+  }
+  .ach-row::after {
+    content: ''; position: absolute; bottom: -1px; left: 0;
+    width: 0; height: 1px; background: var(--gold-dim);
+    transition: width 0.5s ease;
+  }
+  .ach-row:hover::after { width: 100%; }
+  .ach-row.vis { opacity: 1; transform: translateX(0); }
+
+  .ach-num-col {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 3.2rem; font-weight: 500;
+    color: var(--gold); line-height: 1; letter-spacing: -0.03em; padding-top: 0.1rem;
+  }
+  .ach-num-unit {
+    display: block; font-size: 0.68rem; font-weight: 400;
+    color: var(--gold-dim); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-top: 0.3rem;
+  }
+  .ach-text-title {
+    font-size: 1.15rem; font-weight: 700;
+    letter-spacing: -0.02em; color: var(--cream); margin-bottom: 0.5rem;
+  }
+  .ach-text-desc {
+    font-family: var(--serif);
+    font-size: 0.98rem; color: var(--muted2);
+    line-height: 1.8; max-width: 560px; margin-bottom: 1rem;
+  }
+  .ach-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .ach-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem; padding: 0.18rem 0.55rem;
+    background: rgba(212,145,58,0.08); border: 1px solid rgba(212,145,58,0.18);
+    border-radius: 2px; color: var(--gold); letter-spacing: 0.04em;
+  }
+  .ach-idx {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem; color: var(--border);
+    letter-spacing: 0.08em; padding-top: 0.4rem; text-align: right;
+    transition: color 0.3s;
+  }
+  .ach-row:hover .ach-idx { color: var(--muted); }
+
+  /* ══ STACK ══ */
+  .stack-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--border2); border-left: 1px solid var(--border2);
+  }
+  .stack-cell {
+    padding: 2rem;
+    border-bottom: 1px solid var(--border2); border-right: 1px solid var(--border2);
+    opacity: 0; transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease, background 0.2s;
+  }
+  .stack-cell:hover { background: var(--bg2); }
+  .stack-cell.vis { opacity: 1; transform: translateY(0); }
+  .stack-cat {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem; color: var(--gold);
+    letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 1.1rem;
+  }
+  .stack-items { display: flex; flex-direction: column; gap: 0.5rem; }
+  .stack-item {
+    font-size: 0.92rem; color: var(--muted2);
+    display: flex; gap: 0.55rem; align-items: baseline;
+  }
+  .stack-item::before { content: '·'; color: var(--gold-dim); font-size: 1rem; line-height: 1; }
+
+  /* ══ REVEAL ══ */
+  .rev { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .rev.vis { opacity: 1; transform: translateY(0); }
+  .rev.d1 { transition-delay: 0.1s; }
+  .rev.d2 { transition-delay: 0.2s; }
+  .rev.d3 { transition-delay: 0.3s; }
+  .rev.d4 { transition-delay: 0.4s; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ══ RESPONSIVE ══ */
+  @media (max-width: 1000px) {
+    .hero { grid-template-columns: 1fr; padding: 0 2rem; }
+    .hero-left { padding: 8rem 0 3rem; border-right: none; border-bottom: 1px solid var(--border); }
+    .hero-right { padding: 2.5rem 0 4rem; flex-direction: row; flex-wrap: wrap; gap: 1.5rem; }
+    .photo-frame { max-width: 200px; }
+    .section { padding: 5rem 2rem; }
+    .stack-grid { grid-template-columns: repeat(2,1fr); }
+    .tl-container::before { left: 90px; }
+    .tl-entry { grid-template-columns: 90px 1fr; }
+    .tl-entry::before { left: 84px; }
+  }
+  @media (max-width: 700px) {
+    .ach-row { grid-template-columns: 120px 1fr; }
+    .ach-idx { display: none; }
+    .tl-container::before { display: none; }
+    .tl-entry { grid-template-columns: 1fr; padding-bottom: 3rem; }
+    .tl-date { text-align: left; margin-bottom: 0.5rem; }
+    .tl-body { padding-left: 0; }
+    .tl-entry::before { display: none; }
+    .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+  }
+</style>
+
+<!-- Reveal-on-scroll for timeline, achievements, stack cells -->
+<script>
+  const obs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('vis');
+          obs.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.07, rootMargin: '0px 0px -24px 0px' }
+  );
+  document
+    .querySelectorAll('.rev, .tl-entry, .ach-row, .stack-cell')
+    .forEach((el) => obs.observe(el));
+</script>

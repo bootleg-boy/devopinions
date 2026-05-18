@@ -1,0 +1,42 @@
+---
+import { NAV } from '../config';
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="site-nav" id="site-nav">
+  <a href="/" class="nav-logo">K · Deshmukh</a>
+  <ul class="nav-links">
+    {NAV.map((item) => {
+      // Active rules:
+      //  - mailto: never active
+      //  - hash links (e.g. /#journey): only active on the homepage
+      //  - normal paths: active when current path starts with the link's path
+      let isActive = false;
+      if (item.href.startsWith('mailto:')) {
+        isActive = false;
+      } else if (item.href.startsWith('/#')) {
+        isActive = currentPath === '/';
+      } else if (item.href === '/') {
+        isActive = currentPath === '/';
+      } else {
+        isActive = currentPath.startsWith(item.href);
+      }
+      return (
+        <li>
+          <a href={item.href} class={isActive ? 'active' : ''}>{item.label}</a>
+        </li>
+      );
+    })}
+  </ul>
+</nav>
+
+<script>
+  const nav = document.getElementById('site-nav');
+  if (nav) {
+    window.addEventListener(
+      'scroll',
+      () => nav.classList.toggle('scrolled', window.scrollY > 40),
+      { passive: true }
+    );
+  }
+</script>

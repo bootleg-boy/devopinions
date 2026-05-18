@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const notes = (await getCollection('notes')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const fmt = (d: Date) =>
+  new Intl.DateTimeFormat('en-GB', { year: 'numeric', month: 'short', day: '2-digit' }).format(d);
+---
+
+<BaseLayout
+  title="Notes"
+  description="Working notes, study notes, and TIL entries — rough thinking captured while learning. Azure, Angular, ASP.NET, MongoDB, system design."
+>
+  <div class="list-page">
+    <div class="list-header">
+      <div class="s-eyebrow">Working Notes</div>
+      <h1 class="s-title">Study notes &amp; <em>scratch thinking</em></h1>
+      <p class="list-intro">
+        Rough notes from things I'm learning or have just learned. Not polished — captured fast so they
+        don't disappear. Future me searches these all the time; maybe present you will too.
+      </p>
+    </div>
+
+    {notes.length === 0 ? (
+      <p class="list-intro">No notes yet — adding soon.</p>
+    ) : (
+      <div class="entry-list">
+        {notes.map((note) => (
+          <a href={`/notes/${note.id}`} style="display: contents;">
+            <article class="entry">
+              <time class="entry-date" datetime={note.data.date.toISOString()}>{fmt(note.data.date)}</time>
+              <div>
+                <h2 class="entry-title"><span>{note.data.title}</span></h2>
+                <p class="entry-desc">{note.data.description}</p>
+                {note.data.tags.length > 0 && (
+                  <div class="entry-tags">
+                    {note.data.tags.map((t) => <span class="entry-tag">{t}</span>)}
+                  </div>
+                )}
+              </div>
+              <span class="entry-arrow">→</span>
+            </article>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</BaseLayout>

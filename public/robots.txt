@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devopinions.com/sitemap-index.xml
